@@ -90,6 +90,9 @@ function Dashboard() {
           <Link to="/" className="text-gray-600 hover:text-blue-600">
             Home
           </Link>
+          <Link to="/profile" className="text-gray-600 hover:text-blue-600">
+            Profile
+          </Link>
         </div>
       </header>
 

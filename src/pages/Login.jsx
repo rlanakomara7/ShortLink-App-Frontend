@@ -25,6 +25,7 @@ function Login() {
 
       if (response.ok) {
         localStorage.setItem("token", data.results.access_token);
+        localStorage.setItem("user_email", email.trim().toLowerCase());
         navigate("/dashboard");
       } else {
         setMessage(data.message);
