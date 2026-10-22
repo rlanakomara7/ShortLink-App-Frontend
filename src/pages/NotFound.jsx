@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import Footer from "../components/Footer";
+import { LuLink2Off } from "react-icons/lu";
+import { FiAlertTriangle } from "react-icons/fi";
 
 function NotFound() {
   return (
@@ -9,37 +11,11 @@ function NotFound() {
           {/* Error Illustration */}
           <div className="relative mx-auto mb-8 flex h-28 w-28 items-center justify-center">
             <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/60">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#b6c1d8"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                <path d="M3 3l18 18" />
-              </svg>
+              <LuLink2Off className="text-5xl text-slate-300" />
             </div>
 
-            <div className="absolute -right-1 top-0 flex h-9 w-9 rotate-12 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-200">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 3 2 21h20L12 3Z" />
-                <path d="M12 9v5" />
-                <path d="M12 17h.01" />
-              </svg>
+            <div className="absolute -right-1 top-0 flex h-9 w-9 rotate-12 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg">
+              <FiAlertTriangle className="text-xl" />
             </div>
           </div>
 
