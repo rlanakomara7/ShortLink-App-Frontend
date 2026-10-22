@@ -12,6 +12,7 @@ function Profile() {
   const [totalLinks, setTotalLinks] = useState(null);
   const [photo, setPhoto] = useState("");
   const [message, setMessage] = useState("");
+  const [enable, setEnable] = useState(true);
 
   useEffect(() => {
     if (!token) {
@@ -230,12 +231,15 @@ function Profile() {
             </div>
 
             {/* Security */}
-            <div className="mt-9 flex items-center justify-between gap-3 border-b border-slate-100 pb-7">
-              <p className="text-sm font-medium">Two-Factor Authentication</p>
-
-              <span className="text-xs font-bold text-slate-400">
-                NOT AVAILABLE
-              </span>
+            <div>
+              <div className="mt-9 flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
+                <p className="text-sm font-medium">Email Notification</p>
+                <button>On</button>
+              </div>
+              <div className="mt-9 flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
+                <p className="text-sm font-medium">Two-Factor Authentication</p>
+                <span className="text-xs font-bold text-red-600">DISABLED</span>
+              </div>
             </div>
 
             {message && (

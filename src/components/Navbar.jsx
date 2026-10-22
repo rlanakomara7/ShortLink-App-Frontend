@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, NavLink } from "react-router";
 import { FiChevronDown, FiUser, FiLogOut } from "react-icons/fi";
 
 function Navbar() {
@@ -70,18 +70,45 @@ function Navbar() {
           </Link>
 
           <div className="flex items-center gap-6 text-sm">
-            <Link to="/dashboard" className="text-blue-600 hover:text-blue-700">
-              Dashboard
-            </Link>
-
-            <span className="text-slate-400">Analytics</span>
-
-            <Link
+            <NavLink
               to="/dashboard"
-              className="text-slate-500 hover:text-blue-600"
+              end
+              className={({ isActive }) =>
+                `border-b-2 py-2 transition-colors ${
+                  isActive
+                    ? "border-blue-600 font-semibold text-blue-600"
+                    : "border-transparent text-slate-500 hover:text-blue-600"
+                }`
+              }
+            >
+              Dashboard
+            </NavLink>
+
+            <NavLink
+              to="/analytics"
+              className={({ isActive }) =>
+                `border-b-2 py-2 transition-colors ${
+                  isActive
+                    ? "border-blue-600 font-semibold text-blue-600"
+                    : "border-transparent text-slate-500 hover:text-blue-600"
+                }`
+              }
+            >
+              Analytics
+            </NavLink>
+
+            <NavLink
+              to="/links/create"
+              className={({ isActive }) =>
+                `border-b-2 py-2 transition-colors ${
+                  isActive
+                    ? "border-blue-600 font-semibold text-blue-600"
+                    : "border-transparent text-slate-500 hover:text-blue-600"
+                }`
+              }
             >
               Links
-            </Link>
+            </NavLink>
           </div>
         </div>
 
