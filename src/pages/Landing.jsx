@@ -107,7 +107,7 @@ function Landing() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://very-long-architectural-url.com/asset-id-99238-x1"
-                className="min-w-0 flex-1 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                className="min-w-0 flex-1 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 "
               />
             </div>
 
