@@ -1,8 +1,11 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+
+  const location = useLocation();
+  const isDashboard = location.pathname === "/dashboard";
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -11,7 +14,7 @@ function Navbar() {
   }
 
   return (
-    <header className=" sticky border-b border-slate-100 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
       <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5">
         <div className="flex items-center gap-8">
           <Link
@@ -36,6 +39,15 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 text-sm">
+          {isDashboard && token && (
+            <Link
+              to="/links/create"
+              className="rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white hover:bg-blue-700"
+            >
+              + Create New Link
+            </Link>
+          )}
+
           {token ? (
             <>
               <Link to="/profile" className="px-3 py-2 text-slate-600">
