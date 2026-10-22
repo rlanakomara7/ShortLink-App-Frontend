@@ -170,16 +170,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Create Link */}
-          <div className="mb-6 flex justify-end">
-            <Link
-              to="/links/create"
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-200 hover:bg-blue-700"
-            >
-              + Create New Link
-            </Link>
-          </div>
-
           {/* Search */}
           <div className="mb-9 flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
             <svg
