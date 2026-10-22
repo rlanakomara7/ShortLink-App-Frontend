@@ -47,6 +47,40 @@ function Dashboard() {
     getLinks();
   }, [navigate]);
 
+  async function handleDelete(id) {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this link?",
+    );
+
+    if (!confirmed) return;
+
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await fetch(`/api/links/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 401) {
+        localStorage.removeItem("token");
+        navigate("/login", { replace: true });
+        return;
+      }
+
+      if (response.ok) {
+        setLinks(links.filter((link) => link.id !== id));
+      } else {
+        const data = await response.json();
+        setMessage(data.message);
+      }
+    } catch {
+      setMessage("Failed to delete shortlink");
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow-sm">
@@ -107,6 +141,13 @@ function Dashboard() {
                   <p className="mt-2 break-all text-sm text-gray-500">
                     Original: {link.original_url}
                   </p>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(link.id)}
+                    className="mt-4 rounded-lg bg-red-50 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-100"
+                  >
+                    Delete
+                  </button>
                 </div>
               ))}
             </div>
