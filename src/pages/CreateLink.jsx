@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 
 function CreateLink() {
   const navigate = useNavigate();
-
   const [originalUrl, setOriginalUrl] = useState("");
   const [slug, setSlug] = useState("");
   const [message, setMessage] = useState("");
@@ -20,7 +19,6 @@ function CreateLink() {
       navigate("/login", { replace: true });
       return;
     }
-
     setMessage("");
     setLoading(true);
 
@@ -64,7 +62,6 @@ function CreateLink() {
 
       <main className="flex flex-1 justify-center px-5 py-12">
         <div className="w-full max-w-140">
-          {/* Page Heading */}
           <Link
             to="/dashboard"
             className="text-sm font-medium text-blue-600 hover:underline"
@@ -78,10 +75,9 @@ function CreateLink() {
             Transform your long URLs into clean, manageable assets.
           </p>
 
-          {/* Create Link Form */}
+          {/* Create Link*/}
           <div className="mt-7 rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Destination URL */}
               <div>
                 <label
                   htmlFor="original-url"
@@ -109,7 +105,7 @@ function CreateLink() {
                 </p>
               </div>
 
-              {/* Custom Slug */}
+              {/* Slug */}
               <div>
                 <label
                   htmlFor="custom-slug"
@@ -142,7 +138,7 @@ function CreateLink() {
                 </p>
               </div>
 
-              {/* Live Preview */}
+              {/* Preview */}
               <div className="rounded-lg border border-blue-100 bg-[#f1f4ff] p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-blue-600">
                   ◉ Live Preview
@@ -169,7 +165,8 @@ function CreateLink() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="rounded-lg bg-gradient-to-r from-blue-700 to-blue-600 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-blue-100 hover:from-blue-800 hover:to-blue-700 disabled:opacity-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-7 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+                  git
                 >
                   {loading ? "Creating..." : "Create Link ⚡"}
                 </button>
@@ -184,7 +181,7 @@ function CreateLink() {
             </form>
           </div>
 
-          {/* Feature Information */}
+          {/* Information */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <div className="flex items-start gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
@@ -193,7 +190,6 @@ function CreateLink() {
 
               <div>
                 <h3 className="text-sm font-bold">Real-time Analytics</h3>
-
                 <p className="mt-1 text-xs leading-5 text-slate-500">
                   Track every click, geographical location, and referral source
                   instantly.

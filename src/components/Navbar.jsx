@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { FiChevronDown, FiUser, FiLogOut } from "react-icons/fi";
 
 function Navbar() {
   const navigate = useNavigate();
-  const location = useLocation();
   const menuRef = useRef(null);
   const token = localStorage.getItem("token");
   const email = localStorage.getItem("user_email");
@@ -49,10 +48,6 @@ function Navbar() {
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
 
   function handleLogout() {
     localStorage.removeItem("token");

@@ -206,7 +206,7 @@ function Landing() {
         </div>
       </section>
 
-      {/* Data Driven Insights */}
+      {/* Data Driven*/}
       <section className="mx-auto max-w-7xl bg-white px-6 py-20 md:px-12">
         <div className="grid items-center gap-14 md:grid-cols-2">
           <div className="overflow-hidden rounded-xl shadow-xl">

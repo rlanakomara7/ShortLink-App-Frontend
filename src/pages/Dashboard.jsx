@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -147,8 +147,8 @@ function Dashboard() {
 
       <main className="w-full flex-1 px-5 py-10">
         <div className="mx-auto max-w-2xl">
-          {/* Dashboard Heading */}
-          <div className="mb-7 flex flex-wrap items-start justify-between gap-4">
+          {/* Heading */}
+          <div className="mb-7 flex flex-wrap items-center justify-between gap-5">
             <div>
               <h1 className="text-2xl font-extrabold text-slate-900">
                 My Links
@@ -157,17 +157,21 @@ function Dashboard() {
               <p className="mt-1 text-sm text-slate-500">
                 Manage and track your shortened digital assets.
               </p>
-            </div>
 
-            <div className="text-right">
-              <p className="text-xs font-semibold tracking-widest text-slate-500">
-                TOTAL ACTIVE
-              </p>
-
-              <p className="mt-1 text-2xl font-extrabold text-blue-600">
-                {links.length}
+              <p className="mt-3 text-xs font-semibold tracking-wide text-slate-500">
+                TOTAL ACTIVE:
+                <span className="ml-2 text-base font-bold text-blue-600">
+                  {links.length}
+                </span>
               </p>
             </div>
+
+            <Link
+              to="/links/create"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-blue-700"
+            >
+              + Create New Link
+            </Link>
           </div>
 
           {/* Search */}
